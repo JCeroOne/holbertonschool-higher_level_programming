@@ -4,6 +4,7 @@ def islower(c):
         return True
     return False
 
+
 def uppercase(str):
     res = ""
     for i in range(0, len(str)):
