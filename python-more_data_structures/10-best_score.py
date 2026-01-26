@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
+    if not a_dictionary:
+        return None
     max_score = None
     for k in a_dictionary:
         if not max_score or a_dictionary[k] > a_dictionary[max_score]:
