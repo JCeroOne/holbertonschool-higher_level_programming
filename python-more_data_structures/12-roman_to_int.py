@@ -13,6 +13,3 @@ def roman_to_int(roman_string):
             res += nums[roman_string[i]]
         i += 1
     return res
-
-print("{} = {}".format("XXIV", roman_to_int("XXIV")))
-print("{} = {}".format("MMMCMXCIX", roman_to_int("MMMCMXCIX")))
