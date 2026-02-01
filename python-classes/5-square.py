@@ -29,5 +29,5 @@ class Square:
 
     def my_print(self):
         """Prints the square to the console."""
-        print(("#" * self.__size + "\n") * self.__size)
+        print(("#" * self.__size + "\n") * self.__size, end="")
 
