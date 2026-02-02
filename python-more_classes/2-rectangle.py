@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 
-"""Defines a Rectangle class. 
-Private width and height attributes
+"""Defines a Rectangle class.
+Private width and height attributes.
 Methods to calculate area and perimeter."""
 
 
