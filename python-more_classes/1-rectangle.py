@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-"""Defines an empty Rectangle class. Nothing else."""
+"""Defines a Rectangle class, with private width and height attributes."""
 
 
 class Rectangle:
@@ -17,7 +17,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-
         if type(value) not int:
             raise TypeError("width must be an integer")
 
@@ -32,7 +31,6 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-
         if type(value) not int:
             raise TypeError("height must be an integer")
 
