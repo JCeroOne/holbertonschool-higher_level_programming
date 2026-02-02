@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 
-"""Defines a Rectangle class, with private width and height attributes, and methods to calculate area and perimeter."""
+"""Defines a Rectangle class. 
+Private width and height attributes
+Methods to calculate area and perimeter."""
 
 
 class Rectangle:
@@ -45,4 +47,6 @@ class Rectangle:
 
     def perimeter(self):
         """Calculates the perimeter of the rectangle"""
-        return (2 * self.__width + 2 * self.__height) if (self.__width > 0 and self.__height > 0) else 0
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * self.__width + 2 * self.__height
