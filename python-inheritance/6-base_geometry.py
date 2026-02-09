@@ -4,7 +4,7 @@
 
 class BaseGeometry:
     """A currently empty class."""
-    
+
     def area(self):
         """Will calculate the area of the geometry in subclasses."""
         raise Exception("area() is not implemented")
