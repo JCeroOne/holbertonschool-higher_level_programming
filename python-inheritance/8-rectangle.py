@@ -2,7 +2,7 @@
 """Provides the 'BaseGeometry' and 'Rectangle' classes."""
 
 
-class BaseGeometry:
+class BaseGeometry():
     """Apparently, the base of many future subclasses."""
 
     def area(self):
@@ -25,6 +25,5 @@ class Rectangle(BaseGeometry):
     """A representation of a Rectangle in Python."""
 
     def __init__(self, width, height):
-        super().__init__()
-        self.__width = integer_validator("width", width)
-        self.__height = integer_validator("height", height)
+        self.__width = super.integer_validator("width", width)
+        self.__height = super.integer_validator("height", height)
