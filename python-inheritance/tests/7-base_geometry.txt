@@ -1,0 +1,12 @@
+Tests for the BaseGeometry class.
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> geo = BaseGeometry()
+>>> geo.integer_validator("random_value_01", 1234)
+>>> geo.integer_validator("one", 1)
+>>> geo.integer_validator("zero", 0)
+Traceback (most recent call last):
+ValueError: zero must be greater than 0
+>>> geo.integer_validator("none", None)
+Traceback (most recent call last):
+TypeError: none must be an integer
