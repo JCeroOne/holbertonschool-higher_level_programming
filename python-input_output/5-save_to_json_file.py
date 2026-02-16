@@ -4,7 +4,7 @@
 import json
 
 
-def to_json_string(my_obj, filename):
+def save_to_json_file(my_obj, filename):
     """Converts the object to a JSON string and saves it to a file.
 
     Parameters:
