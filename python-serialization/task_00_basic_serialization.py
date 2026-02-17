@@ -21,6 +21,6 @@ def load_and_deserialize(filename):
 
     Returns: The deserialized data."""
     d = None
-    with open(filename, "r", encoding="utf-8"):
+    with open(filename, "r", encoding="utf-8") as f:
         d = f.read()
     return json.loads(d)
