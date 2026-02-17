@@ -14,7 +14,7 @@ class CustomObject:
 
     def display(self):
         """Prints the object in a readable format."""
-        print(f"Name: {name}\nAge: {age}\nIs Student: {is_student}")
+        print(f"Name: {self.name}\nAge: {self.age}\nIs Student: {self.is_student}")
 
     def serialize(self, filename):
         """Serializes and saves the object to the specified file.
