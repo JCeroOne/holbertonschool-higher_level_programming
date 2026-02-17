@@ -10,4 +10,4 @@ def load_and_deserialize(filename):
     d = None
     with open(filename, "r", encoding="utf-8"):
         d = f.read()
-    return d
+    return json.loads(d)
