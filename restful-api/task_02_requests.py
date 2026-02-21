@@ -13,7 +13,7 @@ def fetch_and_print_posts():
     if res.status_code == 200:
         data = res.json()
         for post in data:
-            print(post.title)
+            print(post["title"])
 
 
 def fetch_and_save_posts():
