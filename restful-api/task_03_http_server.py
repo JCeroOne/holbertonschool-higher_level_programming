@@ -4,7 +4,7 @@
 import http.server
 
 
-class SimpleHTTPHandler(http.server.BattleHTTPRequestHandler):
+class SimpleHTTPHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/":
