@@ -8,7 +8,7 @@ def fetch_and_print_posts():
     """Gets all the posts from JSONPlaceholder and prints them."""
     
     res = req.get("https://jsonplaceholder.typicode.com/posts")
-    print(f"Status code: {res.status_code}")
+    print(f"Status Code: {res.status_code}")
     
     if res.status_code == 200:
         data = res.json()
