@@ -22,7 +22,7 @@ def get_user(username):
     
     return jsonify(user[username])
 
-@app.route("/add_user")
+@app.route("/add_user", methods=["POST"])
 def add_user():
     if not request.is_json:
         return jsonify({"error": "Invalid JSON"}), 400
@@ -44,7 +44,7 @@ def add_user():
     }
 
     return jsonify({
-        "message": "User created",
+        "message": "User added",
         "user": user
     }), 201
 
