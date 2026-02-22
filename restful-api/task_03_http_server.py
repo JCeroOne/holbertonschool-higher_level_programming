@@ -2,7 +2,7 @@
 """Creates a basic HTTP server."""
 
 import http.server
-
+import json
 
 class SimpleHTTPHandler(http.server.BaseHTTPRequestHandler):
 
