@@ -49,7 +49,7 @@ def add_user():
 
     return jsonify({
         "message": "User added",
-        "user": user
+        "user": users[username]
     }), 201
 
 if __name__ == "__main__":
