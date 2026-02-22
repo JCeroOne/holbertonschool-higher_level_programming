@@ -38,8 +38,8 @@ def add_user():
 
     users[username] = {
         "username": username,
-        "name": data.get("name")
-        "age": data.get("age")
+        "name": data.get("name"),
+        "age": data.get("age"),
         "city": data.get("city")
     }
 
