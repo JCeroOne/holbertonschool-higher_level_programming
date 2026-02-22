@@ -44,3 +44,6 @@ def run(server=http.server.HTTPServer, handler=SimpleHTTPHandler, port=8000):
     httpd = server(("", port), handler)
     print(f"Server listening at 'http://localhost:{port}/'!")
     httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
