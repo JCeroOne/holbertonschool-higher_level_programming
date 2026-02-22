@@ -44,7 +44,7 @@ class SimpleHTTPHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(f"Endpoint '{self.path}' not found on this server!")
 
-    def run(server=http.server.HTTPServer, handler=SimpleHTTPHandler, port=8000):
-        httpd = server(("", port), handler)
-        print(f"Server listening at 'http://localhost:{port}/'!")
-        httpd.serve_forever()
+def run(server=http.server.HTTPServer, handler=SimpleHTTPHandler, port=8000):
+    httpd = server(("", port), handler)
+    print(f"Server listening at 'http://localhost:{port}/'!")
+    httpd.serve_forever()
