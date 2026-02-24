@@ -51,6 +51,7 @@ def login():
     return jsonify({"access_token": access_token})
 
 @app.route("/basic-protected")
+@auth.login_required
 def basic_protected():
     return "Basic Auth: Access Granted"
 
