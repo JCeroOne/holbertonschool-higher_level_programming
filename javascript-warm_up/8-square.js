@@ -5,7 +5,7 @@ if (isNaN(arg)) {
   console.log('Missing size');
 } else {
   for (let y = 0; y < Math.floor(arg); y++) {
-    let str = "";
+    let str = '';
     for (let x = 0; x < Math.floor(arg); x++) {
       str += 'X';
     }
