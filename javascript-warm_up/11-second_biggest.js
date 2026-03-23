@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const args = process.argv.splice(0, 2);
+let args = process.argv;
 
-args.sort((a, b) => a - b);
+args.splice(0, 2).sort((a, b) => a - b);
 console.log(args[1]);
