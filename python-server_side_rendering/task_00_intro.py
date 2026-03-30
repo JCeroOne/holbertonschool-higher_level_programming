@@ -8,10 +8,12 @@ def generate_invitations(template, attendees):
         attendees (list[dict]): Attendee data."""
 
     if not isinstance(template, str):
-        raise TypeError("Template must be a string.")
+        print("Template must be a string.")
+        return
     
     if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
-        raise TypeError("Attendees must be a list of dictionaries.")
+        print("Attendees must be a list of dictionaries.")
+        return
     
     if template.strip() == "":
         print("Template is empty, no output files generated.")
@@ -30,7 +32,7 @@ def generate_invitations(template, attendees):
             if field in attendee:
                 val = attendee[field]
             
-            output.replace(f"{{{field}}}", str(val))
+            output = output.replace(f"{{{field}}}", str(val))
         
         filename = f"output_{i + 1}.txt"
         
