@@ -20,12 +20,12 @@ def items():
     try:
         with open("items.json", "r") as f:
             data = json.load(f.read())
-            items = data.get("items", [])
+            items_list = data.get("items", [])
     
     except Exception:
-        items = []
+        items_list = []
     
-    return render_template('items.html', items=items)
+    return render_template('items.html', items=items_list)
 
 if __name__ == '__main__':
    app.run(debug=True, port=5000)
