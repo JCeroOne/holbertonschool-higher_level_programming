@@ -61,6 +61,9 @@ def products():
       data = [p for p in data if p.get('id') == id]
     except ValueError:
       data = []
+    
+    if not data:
+        return render_template('product_display.html', error="Product not found")
 
   return render_template('product_display.html', products=data)
   
