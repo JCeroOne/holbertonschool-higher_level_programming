@@ -19,7 +19,7 @@ def contact():
 def items():
     try:
         with open("items.json", "r") as f:
-            data = json.load(f.read())
+            data = json.load(f)
             items_list = data.get("items", [])
     
     except Exception:
