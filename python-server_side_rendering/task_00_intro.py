@@ -34,5 +34,5 @@ def generate_invitations(template, attendees):
         
         filename = f"output_{i + 1}.txt"
         
-        with open(filename) as f:
+        with open(filename, "w") as f:
             f.write(output)
