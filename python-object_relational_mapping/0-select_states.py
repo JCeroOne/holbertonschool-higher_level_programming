@@ -1,21 +1,34 @@
 #!/usr/bin/python3
-import MySQLdb
+"""List all states from the hbtn_0e_0_usa database.
+"""
+
 import sys
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-    )
+import MySQLdb
 
+
+def fetch_states(user, password, db_name):
+    """Connect to MySQL and return rows from states ordered by id."""
+    db = MySQLdb.connect(host="localhost", port=3306,
+                         user=user, passwd=password, db=db_name)
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
-
-    for row in cur.fetchall():
-        print(row)
-
+    rows = cur.fetchall()
     cur.close()
     db.close()
+    return rows
+
+
+def main():
+    """Read command-line arguments and print each state row as a tuple."""
+    if len(sys.argv) != 4:
+        return
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    for row in fetch_states(user, password, db_name):
+        print(row)
+
+
+if __name__ == "__main__":
+    main()
