@@ -1,33 +1,40 @@
 #!/usr/bin/python3
-"""Lists all states with a name starting with N from the database."""
+"""List states with a name starting with uppercase N from hbtn_0e_0_usa."""
+
+import sys
 
 import MySQLdb
-import sys
+
+
+def fetch_states_starting_with_upper_n(user, password, db_name):
+    """Return rows from states where name starts with uppercase 'N',
+    ordered by id."""
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=user,
+                         passwd=password,
+                         db=db_name)
+    cur = db.cursor()
+    cur.execute(
+        "SELECT * FROM states WHERE BINARY name LIKE %s ORDER BY id ASC",
+        ("N%",)
+    )
+    rows = cur.fetchall()
+    cur.close()
+    db.close()
+    return rows
+
+
+def main():
+    """Read CLI args and print each matching state row as a tuple."""
+    if len(sys.argv) != 4:
+        return
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    for row in fetch_states_starting_with_upper_n(user, password, db_name):
+        print(row)
 
 
 if __name__ == "__main__":
-    """Connects to MySQL and prints filtered states."""
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database
-    )
-
-    cursor = db.cursor()
-    cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
-    )
-
-    states = cursor.fetchall()
-
-    for state in states:
-        print(state)
-
-    cursor.close()
-    db.close()
+    main()
