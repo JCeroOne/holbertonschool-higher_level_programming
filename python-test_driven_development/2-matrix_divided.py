@@ -39,7 +39,7 @@ def validate_matrix(matrix):
 
     row_length = -1
     for row in matrix:
-        if not isinstance(row, list):
+        if not isinstance(row, list) or len(row) == 0:
             raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         for n in row:
             if not isinstance(n, (int, float)):
