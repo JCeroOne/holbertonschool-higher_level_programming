@@ -1,3 +1,4 @@
+import sqlite3
 from flask import Flask, render_template, request
 import json
 import csv
@@ -57,11 +58,14 @@ def products():
       data = []
   else:
     try:
-        conn = sqlite3.connect('products.db')
+        conn = sqlite3.connect("products.db")
         cursor = conn.cursor()
-        cursor.execute("SELECT id, name, category, price FROM Products")
+
+        cursor.execute(
+            "SELECT id, name, category, price FROM products"
+        )
+
         rows = cursor.fetchall()
-        conn.close()
 
         for row in rows:
             data.append({
@@ -70,20 +74,11 @@ def products():
                 "category": row[2],
                 "price": row[3]
             })
-    except Exception:
-        return render_template('product_display.html', error="Database error")
 
-  if id:
-    try:
-      id = int(id)
-      data = [p for p in data if p.get('id') == id]
-    except ValueError:
-      data = []
-    
-    if not data:
-        return render_template('product_display.html', error="Product not found")
+        conn.close()
 
-  return render_template('product_display.html', products=data)
-  
-if __name__ == '__main__':
-   app.run(debug=True, port=5000)
+    except Exception as e:
+        return render_template(
+            "product_display.html",
+            error="Database error"
+        )
