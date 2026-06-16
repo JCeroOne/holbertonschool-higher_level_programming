@@ -22,10 +22,11 @@ def matrix_divided(matrix, div):
     
     new_matrix = []
 
-    for row in range(0, len(matrix)):
-        new_matrix.append([])
-        for col in range(0, len(matrix[row])):
-            row.append(matrix[row][col] / div)
+    for r in range(0, len(matrix)):
+        row = []
+        for col in range(0, len(matrix[r])):
+            row.append(matrix[r][col] / div)
+        new_matrix.append(row)
     
     return new_matrix
 
