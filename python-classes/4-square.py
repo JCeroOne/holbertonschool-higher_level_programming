@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 
 """Define a square class with a private, instance attribute named size.
-'size' must be an integer, and greater or equal to 0. Now the size can actually be modified, so I guess that may be kind of useful."""
+'size' must be an integer, and greater or equal to 0.
+Now the size can actually be modified, so I guess that may be kind of useful.
+"""
+
 
 class Square:
     """Represents a square."""
-    
+
     def __init__(self, size=0):
         self.__size = size
 
@@ -26,4 +29,3 @@ class Square:
     def area(self):
         """Returns the area of the square."""
         return self.__size * self.__size
-
