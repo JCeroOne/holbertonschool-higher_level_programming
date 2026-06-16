@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
 
     validate_matrix(matrix)
     
-    if not isinstance(div, (int, float)):
+    if not isinstance(div, (int, float)) or div != div:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
@@ -45,7 +45,7 @@ def validate_matrix(matrix):
         if not isinstance(row, list) or len(row) == 0:
             raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         for n in row:
-            if not isinstance(n, (int, float)):
+            if not isinstance(n, (int, float)) or n != n:
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         if row_length == -1:
             row_length = len(row)
