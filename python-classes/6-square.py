@@ -50,6 +50,7 @@ class Square:
         """Prints the square to the console."""
         if self.__size == 0:
             print()
+            return
         print(
             "\n" * self.__position[1] +
             (" " * self.__position[0] + "#" * self.__size + "\n")
