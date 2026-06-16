@@ -38,18 +38,18 @@ def validate_matrix(matrix):
         matrix (list[list[int, float]]): The matrix to validate.
     """
 
-    matrixMustBeMatrixError = "matrix must be a matrix (list of lists) of integers/floats"
+    exc = "matrix must be a matrix (list of lists) of integers/floats"
 
     if len(matrix) == 0:
-        raise TypeError(matrixMustBeMatrixError)
+        raise TypeError(exc)
 
     row_length = -1
     for row in matrix:
         if not isinstance(row, list) or len(row) == 0:
-            raise TypeError(matrixMustBeMatrixError)
+            raise TypeError(exc)
         for n in row:
             if not isinstance(n, (int, float)) or n != n:
-                raise TypeError(matrixMustBeMatrixError)
+                raise TypeError(exc)
         if row_length == -1:
             row_length = len(row)
         if len(row) != row_length:
