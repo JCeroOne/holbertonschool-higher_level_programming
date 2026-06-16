@@ -9,7 +9,7 @@ def safe_print_list_integers(my_list=[], x=0):
             except:
                 continue
         print()
-    except:
+    except Exception:
         print()
     return printed
 
