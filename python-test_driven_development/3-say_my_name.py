@@ -19,7 +19,4 @@ def say_my_name(first_name, last_name=''):
     if type(last_name) != str:
         raise TypeError(lnExc)
 
-    statement = "My name is {}".format(first_name)
-    if(len(last_name) > 0):
-        statement += " {}".format(last_name)
-    print(statement, end="\n")
+    print("My name is {} {}".format(first_name, last_name))
