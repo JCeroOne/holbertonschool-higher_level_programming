@@ -20,11 +20,14 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     
-    for row in matrix:
-        for n in range(0, len(row)):
-            row[n] /= div
+    new_matrix = []
+
+    for row in range(0, len(matrix)):
+        new_matrix.append([])
+        for col in range(0, len(row)):
+            row.append(matrix[row][col] / div)
     
-    return matrix
+    return new_matrix
 
 def validate_matrix(matrix):
     """Validates the given matrix.
