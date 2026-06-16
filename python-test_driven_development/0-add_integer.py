@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Defines add_integer, a function that adds two integers together.
+"""
 def add_integer(a, b=98):
     if type(a) is float:
         a = int(a)
