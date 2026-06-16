@@ -8,18 +8,18 @@ def matrix_divided(matrix, div):
     Parameters:
         matrix (list[list[float, int]]): The matrix to divide.
         div (int, float) The divisor.
-    
+
     Returns:
         (list[list[float, int]]): The divided matrix.
     """
 
     validate_matrix(matrix)
-    
+
     if not isinstance(div, (int, float)) or div != div:
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    
+
     new_matrix = []
 
     for r in range(0, len(matrix)):
@@ -27,26 +27,29 @@ def matrix_divided(matrix, div):
         for col in range(0, len(matrix[r])):
             row.append(round(matrix[r][col] / div, 2))
         new_matrix.append(row)
-    
+
     return new_matrix
+
 
 def validate_matrix(matrix):
     """Validates the given matrix.
-    
+
     Parameters:
         matrix (list[list[int, float]]): The matrix to validate.
     """
 
+    matrixMustBeMatrixError = "matrix must be a matrix (list of lists) of integers/floats"
+
     if len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(matrixMustBeMatrixError)
 
     row_length = -1
     for row in matrix:
         if not isinstance(row, list) or len(row) == 0:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(matrixMustBeMatrixError)
         for n in row:
             if not isinstance(n, (int, float)) or n != n:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(matrixMustBeMatrixError)
         if row_length == -1:
             row_length = len(row)
         if len(row) != row_length:
