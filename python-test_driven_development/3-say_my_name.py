@@ -22,4 +22,4 @@ def say_my_name(first_name, last_name=''):
     statement = "My name is {}".format(first_name)
     if(len(last_name) > 0):
         statement += " {}".format(last_name)
-    print(statement)
+    print(statement, end="\n")
