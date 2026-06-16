@@ -37,6 +37,9 @@ def validate_matrix(matrix):
         matrix (list[list[int, float]]): The matrix to validate.
     """
 
+    if len(matrix) == 0:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
     row_length = -1
     for row in matrix:
         if not isinstance(row, list) or len(row) == 0:
