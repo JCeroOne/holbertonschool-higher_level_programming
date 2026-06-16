@@ -6,7 +6,10 @@ def roman_to_int(roman_string):
     res = 0
     i = 0
     while i < len(roman_string):
-        if i < len(roman_string) - 1 and nums[roman_string[i + 1]] > nums[roman_string[i]]:
+        if ( 
+            i < len(roman_string) - 1 and
+            nums[roman_string[i + 1]] > nums[roman_string[i]]
+        ):
             res += nums[roman_string[i + 1]] - nums[roman_string[i]]
             i += 1
         else:
